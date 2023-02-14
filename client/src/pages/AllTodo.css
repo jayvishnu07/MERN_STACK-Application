@@ -1,0 +1,57 @@
+.main-div{
+    width: 100%;
+    background: beige;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-items-div{
+    border: 2px solid black;
+    width: 40%;
+    height: 17vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1rem 0 1rem 0;
+
+}
+
+
+.todo-items-btn-div{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.popup-main-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.model-btn-div{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.main-form-div{
+    width: 40vw;
+    padding: 20px;
+}
+
+.main-form-group-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-element{
+    margin-bottom: 2rem;
+}
