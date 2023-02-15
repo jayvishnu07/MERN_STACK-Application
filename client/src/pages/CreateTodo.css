@@ -1,7 +1,7 @@
 .main-div-createTodo{
     width: 100%  ;
     height: 100vh ;
-    background:  #537FE7  ;
+    background:  #635985d8 ;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -14,7 +14,7 @@
 }
 
 .main-form-div-createTodo{
-    background: #E9F8F9;
+    background: #393053da;
     width: 40vw;
     height: 40vh;
     padding: 20px;
@@ -41,7 +41,7 @@
 }
 .bottom-btn-createTodo{
     margin: 3rem 0 0 0;
-    background: #181823;
+    background: #18122B;
     padding: .5rem 1rem .5rem 1rem;
     border: none;
     border-radius: 10px;
@@ -50,7 +50,7 @@
 }
 
 .bottom-btn-createTodo:hover{
-    color: #181823;
+    color: #18122B;
     background: #ffffff;
     transition: 0.3s;
 }
@@ -60,7 +60,7 @@
  }
 
 .btn-createTodo{
-    background: rgb(29, 199, 29);
+    background: rgb(60, 141, 60);
     padding: .5rem 1rem .5rem 1rem;
     border: none;
     border-radius: 10px;
