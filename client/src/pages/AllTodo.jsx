@@ -17,7 +17,7 @@ const AllTodo = () => {
     axios.get('/all-todos')
       .then((res) => { setTodos(res.data); })
       .catch((err) => { console.log(err) })
-  }, [falseTodos,falseUpdatedTodos]);
+  }, [falseTodos, falseUpdatedTodos]);
 
   const handleDeleteClick = (e) => {
     axios.delete(`/delete-todo/${e.target.value}`)
@@ -30,9 +30,9 @@ const AllTodo = () => {
   const handleUpdateClick = (prop) => {
     console.log(prop);
     console.log(todos);
-    console.log("updatedTodos",updatedTodos);
-    console.log("falseTodos",falseTodos);
-    console.log("falseUpdatedTodos",falseUpdatedTodos);
+    console.log("updatedTodos", updatedTodos);
+    console.log("falseTodos", falseTodos);
+    console.log("falseUpdatedTodos", falseUpdatedTodos);
     console.log(prop.title);
     setUpdatedTodos(prop);
 
@@ -48,11 +48,11 @@ const AllTodo = () => {
   }
 
   const todoUpdateClick = () => {
-    axios.put('/update-todo',updatedTodos)
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => console.log(err))
+    axios.put('/update-todo', updatedTodos)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err))
     setFalseUpdatedTodos(updatedTodos);
   }
   // useEffect(() => {
@@ -68,15 +68,17 @@ const AllTodo = () => {
 
   return (
     <div className='main-div' >
-      <h1>All Todos</h1>
-      <Button onClick={() => { navigate(-1) }} >Get Back</Button>
+      <h1 className='alltodo-title' >All Todos</h1>
+      <button className='btn-allTodo' onClick={() => { navigate('/create-todo') }} >Get Back</button>
       {todos.map((todo) => {
         return (
           <div className='todo-items-div' key={todo._id} >
-            <h3>{todo.title}</h3>
-            <h6>{todo.description}</h6>
+            <div className="todo-content-div">
+              <h4>{todo.title}</h4>
+              <h6>{todo.description}</h6>
+            </div>
             <div className='todo-items-btn-div'>
-              <Button onClick={() => { setModelVisibility(true); handleUpdateClick(todo) }} >Update</Button>
+              <button className='btn-allTodo update-btn ' onClick={() => { setModelVisibility(true); handleUpdateClick(todo) }} >Update</button>
               {/* ---------------------- model ----------------------*/}
               <Modal visible={modelVisibility} bac width="500" height="300" effect="fadeInDown" onClickAway={() => setModelVisibility(false)} >
                 <div className='popup-main-div' >
@@ -97,15 +99,15 @@ const AllTodo = () => {
                         onChange={handleChange}
                       />
                       <div className='model-btn-div' >
-                        <Button onClick={() => { setModelVisibility(false); todoUpdateClick() }} >Update</Button>
-                        <Button onClick={() => setModelVisibility(false)} >Close</Button>
+                        <button className='btn-allTodo' onClick={() => { setModelVisibility(false); todoUpdateClick() }} >Update</button>
+                        <button className='btn-allTodo' onClick={() => setModelVisibility(false)} >Close</button>
                       </div>
                     </Form.Group>
                   </Form>
 
                 </div>
               </Modal>
-              <Button value={todo._id} onClick={handleDeleteClick}>Delete</Button>
+              <button className='btn-allTodo delelte-btn ' value={todo._id} onClick={handleDeleteClick}>Delete</button>
             </div>
           </div>
         )
