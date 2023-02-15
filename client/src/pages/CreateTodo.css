@@ -1,24 +1,88 @@
-.main-div{
-    width: 100%;
-    background: beige;
+.main-div-createTodo{
+    width: 100%  ;
+    height: 100vh ;
+    background:  #537FE7  ;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
-.main-form-div{
+.title-createTodo{
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.main-form-div-createTodo{
+    background: #E9F8F9;
     width: 40vw;
+    height: 40vh;
     padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.395) 0px 30px 90px;
 }
 
-.main-form-group-div{
+.main-form-group-div-createTodo{
+    width: 100%;
+    height: 100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.form-element{
-    margin-bottom: 10px;
+.form-element-createTodo{
+    margin-bottom: 2rem;
+}
+.bottom-btn-createTodo{
+    margin: 3rem 0 0 0;
+    background: #181823;
+    padding: .5rem 1rem .5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.bottom-btn-createTodo:hover{
+    color: #181823;
+    background: #ffffff;
+    transition: 0.3s;
+}
+
+.bottom-btn-createTodo:active{
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+ }
+
+.btn-createTodo{
+    background: rgb(29, 199, 29);
+    padding: .5rem 1rem .5rem 1rem;
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.btn-createTodo:hover{
+    color: rgb(29, 199, 29);
+    background: #ffffff;
+    transition: 0.3s;
+}
+
+.btn-createTodo:active{
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+ }
+
+.bottom-btns-div{
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+    height: fit-content;
 }

@@ -5,6 +5,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+  
 }
 
 .todo-items-div{
@@ -18,7 +19,6 @@
     margin: 1rem 0 1rem 0;
 
 }
-
 
 .todo-items-btn-div{
     width: 100%;
