@@ -12,7 +12,8 @@ mongoose.connect('mongodb://localhost/mern')
 
 const schema = mongoose.Schema({
     title: String,
-    description: String
+    description: String,
+    time : String
 })
 
 const Todo = mongoose.model('Todo', schema)
@@ -28,10 +29,12 @@ app.get('/all-todos', (req, res) => {
 
 
 app.post('/create-todo', async (req, res) => {
+    // console.log(req.body);
     try {
         const todo = new Todo({
             title: req.body.title,
             description: req.body.description,
+            time : req.body.time
         })
         const result = await todo.save();
         // console.log(result);
@@ -39,7 +42,7 @@ app.post('/create-todo', async (req, res) => {
         console.log(error.message);
     }
 })
-
++
 app.put('/update-todo', (req, res) => {
         console.log("gong...",req.body);
         Todo.findByIdAndUpdate(req.body._id,{

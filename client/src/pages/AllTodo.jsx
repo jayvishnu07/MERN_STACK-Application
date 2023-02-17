@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Button, Form } from 'react-bootstrap'
+import { Form } from 'react-bootstrap'
 import './AllTodo.css'
 import { useNavigate } from 'react-router-dom'
 import Modal from 'react-awesome-modal';
-
+import { MdDelete } from 'react-icons/md';
+import { HiPencil } from 'react-icons/hi';
 
 const AllTodo = () => {
   const navigate = useNavigate();
@@ -13,27 +14,29 @@ const AllTodo = () => {
   const [falseTodos, setFalseTodos] = useState([]);//corrected
   const [falseUpdatedTodos, setFalseUpdatedTodos] = useState({});
   const [modelVisibility, setModelVisibility] = useState(false)
+
   useEffect(() => {
     axios.get('/all-todos')
       .then((res) => { setTodos(res.data); })
       .catch((err) => { console.log(err) })
   }, [falseTodos, falseUpdatedTodos]);
 
-  const handleDeleteClick = (e) => {
-    axios.delete(`/delete-todo/${e.target.value}`)
+  const handleDeleteClick = (id) => {
+    // console.log(id);
+    axios.delete(`/delete-todo/${id}`)
       .then((res) => {
         console.log(res)
       })
       .catch((err) => console.log(err))
-    setFalseTodos(todos.filter((a) => { return a._id !== e.target.value }))
+    setFalseTodos(todos.filter((a) => { return a._id !== id }))
   }
   const handleUpdateClick = (prop) => {
-    console.log(prop);
-    console.log(todos);
-    console.log("updatedTodos", updatedTodos);
-    console.log("falseTodos", falseTodos);
-    console.log("falseUpdatedTodos", falseUpdatedTodos);
-    console.log(prop.title);
+    // console.log(prop);
+    // console.log(todos);
+    // console.log("updatedTodos", updatedTodos);
+    // console.log("falseTodos", falseTodos);
+    // console.log("falseUpdatedTodos", falseUpdatedTodos);
+    // console.log(prop.title);
     setUpdatedTodos(prop);
 
   }
@@ -55,6 +58,7 @@ const AllTodo = () => {
       .catch((err) => console.log(err))
     setFalseUpdatedTodos(updatedTodos);
   }
+
   // useEffect(() => {
   //   const interval = setInterval(() => {
   //     axios.get('/all-todos')
@@ -74,11 +78,14 @@ const AllTodo = () => {
         return (
           <div className='todo-items-div' key={todo._id} >
             <div className="todo-content-div">
-              <h4>{todo.title}</h4>
+              <div className="name-time-div">
+                <h4>{todo.title}</h4>
+                <p>{`created at : ${todo.time}`}</p>
+              </div>
               <h6>{todo.description}</h6>
             </div>
             <div className='todo-items-btn-div'>
-              <button className='btn-allTodo update-btn ' onClick={() => { setModelVisibility(true); handleUpdateClick(todo) }} >Update</button>
+              <HiPencil className='update-btn ' onClick={() => { setModelVisibility(true); handleUpdateClick(todo) }} />
               {/* ---------------------- model ----------------------*/}
               <Modal visible={modelVisibility} bac width="500" height="300" effect="fadeInDown" onClickAway={() => setModelVisibility(false)} >
                 <div className='popup-main-div' >
@@ -107,7 +114,7 @@ const AllTodo = () => {
 
                 </div>
               </Modal>
-              <button className='btn-allTodo delelte-btn ' value={todo._id} onClick={handleDeleteClick}>Delete</button>
+              <MdDelete className='delelte-btn' onClick={() => handleDeleteClick(todo._id)} />
             </div>
           </div>
         )

@@ -10,7 +10,8 @@ const CreateTodo = () => {
     const navigate = useNavigate()
     const [todos, setTodos] = useState({
         title: "",
-        description: ""
+        description: "",
+        time : ""
     });
 
     const handleChange = (e) => {
@@ -24,7 +25,11 @@ const CreateTodo = () => {
     }
 
     const handleCreateTodoClick = (event) => {
-        event.preventDefault()
+        event.preventDefault();
+        var timing =`${new Date(Date.now())}`;
+        console.log(timing);
+        todos.time = timing.slice(0, 25);
+        console.log(todos.time);
         axios.post('/create-todo', todos)
             .then((res) => console.log(res))
             .then(navigate('all-todos'))

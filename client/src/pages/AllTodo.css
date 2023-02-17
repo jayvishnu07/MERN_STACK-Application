@@ -1,9 +1,13 @@
+*{
+    /* border: 1px solid red; */
+}
+
 .main-div {
     width: 100%;
     min-height: 100vh;
     background: #635985d8;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
@@ -14,36 +18,58 @@
     color: #ffffff;
 }
 
-.todo-content-div{
-    margin: 20px 0 0 0;
-    height: 50%;
-    width: 90%;
-    word-wrap: break-word; 
-    overflow: auto;
-    text-align: center;
-}
-
 .todo-items-div {
     color: #ffffff;
     border: none;
     border-radius: 10px;
     width: 40%;
-    height: auto;
     background: #393053da;
     display: flex;
-    align-items: center;
+    align-items:flex-start;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     margin: 1rem 0 1rem 0;
     box-shadow: rgba(0, 0, 0, 0.395) 0px 30px 90px;
+    padding: 20px;
+}
+
+
+.todo-content-div{
+    height: auto;
+    width: 90%;
+    overflow-wrap: break-word; 
+    word-break: break-all;
+    text-align: center;
+}
+
+.name-time-div{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin: 0 0 1rem 0
+}
+
+.name-time-div h4{
+    height: 100%;
+    margin: 0 1rem 0 0;
+}
+
+.name-time-div p{
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.todo-content-div h6{
+    display: flex;
+    justify-content: flex-start;
 
 }
 
 .todo-items-btn-div {
-    width: 100%;
     display: flex;
     justify-content: space-around;
-    margin: 0 0 20px 0;
+    align-items: center;
+    padding: 2px;
 }
 
 .popup-main-div {
@@ -57,6 +83,7 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    flex-direction: row-reverse;
 }
 
 
@@ -96,11 +123,38 @@
 }
 
 .delelte-btn {
-    background-color: rgba(157, 0, 0, 0.674);
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    margin: 4px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
 }
 
 .update-btn{
-    background-color: rgba(1, 1, 115, 0.833);
+    margin: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+}
+
+.update-btn:hover{
+    background-color: #ffffff;
+    color: #393053da;
+}
+
+.delelte-btn:hover{
+    background-color: #ffffff;
+    color: #393053da;
+}
+.update-btn:active{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.delelte-btn{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 /* Scroll bar */

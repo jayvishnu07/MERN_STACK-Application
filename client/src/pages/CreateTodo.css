@@ -41,7 +41,7 @@
 }
 .bottom-btn-createTodo{
     margin: 3rem 0 0 0;
-    background: #18122B;
+    background: #393053f5;
     padding: .5rem 1rem .5rem 1rem;
     border: none;
     border-radius: 10px;
@@ -50,7 +50,7 @@
 }
 
 .bottom-btn-createTodo:hover{
-    color: #18122B;
+    color: #393053f1;
     background: #ffffff;
     transition: 0.3s;
 }
